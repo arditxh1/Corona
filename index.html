@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+        <script src="main.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <div class="radialProgressBar progress-1 mb-5" id="circleProgres">
+        <div class="overlay">1</div>
+    </div>
+    <body class="d-flex flex-column justify-content-center align-items-center">
+        <div id="entry">
+            <img src="intro.svg" id="mainImg">
+            <div id="textEntry">		
+                <h1>A është Covid-19 apo një grip ose ftohje e zakonshme ?</h1>
+                <p>Ky pytsor kalkulon simpotmat e juaja në bazë të dhënave nga OBSH me përqindje reale dhe 
+                    ka informacione të sakta lidhur me Covid-19 nga burime të besueshme.</p>
+                <button id="start" onclick="hideEntry()">Press Enter</button>
+            </div>
+        </div>
+        <div id="main">
+            <h1 id="TitleQuestion">
+                A keni temperature te larte shpesh.
+            </h1>
+        </div>
+        <div id="buttons" class="justify-content-center align-items-center">
+            <button value="0" class="buttonQ" onclick="NextQuestion(this)">Kurr</button>
+            <button value="1" class="buttonQ" onclick="NextQuestion(this)">Rrall</button>
+            <button value="2" class="buttonQ" onclick="NextQuestion(this)">Mesatarisht</button>
+            <button value="3" class="buttonQ" onclick="NextQuestion(this)">Shpesh</button>
+        </div>
+    </body>
+</html>
