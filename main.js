@@ -149,10 +149,6 @@ function getPercentage(val, num){
     return Math.floor(((num - val) / num) * 100)
 }
 
-$("h1").on("on", function(){
-    console.log(1);
-})
-
 $('html').keypress(function(event){
     var keycode = (event.keyCode ? event.keyCode : event.which);
 	if (keycode == '13') {
@@ -190,4 +186,5 @@ function endingDel(){
     $("#circleProgres").remove();
     $("body").append(resultText)
     $("body").append("<h4 class='endPercentageText'>" + subResultText + "</h4>")
+    $("body").append("<button class='endPercentageText'>" + subResultText + "</button>")
 }

@@ -7,6 +7,7 @@
         <script src="main.js"></script>
         <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     </head>
     <div class="radialProgressBar progress-1 mb-5" id="circleProgres">
         <div class="overlay">1</div>
@@ -15,10 +16,10 @@
         <div id="entry">
             <img src="intro.svg" id="mainImg">
             <div id="textEntry">		
-                <h1>A është Covid-19 apo një grip ose ftohje e zakonshme ?</h1>
+                <h1>A është Covid-19 apo një grip ose ftohje e zakonshme?</h1>
                 <p>Ky pytsor kalkulon simpotmat e juaja në bazë të dhënave nga OBSH me përqindje reale dhe 
                     ka informacione të sakta lidhur me Covid-19 nga burime të besueshme.</p>
-                <button id="start" onclick="hideEntry()">Press Enter</button>
+                <button id="start" onclick="hideEntry()">Fillo tani!</button>
             </div>
         </div>
         <div id="main">
@@ -33,23 +34,28 @@
             <button value="3" class="buttonQ" onclick="NextQuestion(this)">Shpesh</button>
         </div>
     </body> 
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Paralajmërim</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
             </div>
             <div class="modal-body">
-            ...
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+                Ju rekomandojmë shumë që ti mendoni pergjigjet mirë dhe të jenë sa më të sakta të mundshme që dhe rezultatet përfundimtare të jenë të sakta.
             </div>
         </div>
         </div>
     </div>
+    <script>
+    let seen = ""
+    $(".buttonQ").on("mouseenter", function(){
+        if(seen == ""){
+            $('#myModal').modal('show');
+            seen = "a";
+        }
+    })
+    </script>
 </html>
