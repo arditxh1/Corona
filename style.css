@@ -214,6 +214,15 @@ button:focus {
     background-image: linear-gradient(90deg, #808080 50%, transparent 50%), linear-gradient(-90deg, #808080 50%, #ddd 50%);
 }
 
+.endSuggestion{
+    font-size: 1rem;
+    font-weight: lighter;
+    color: white;
+    text-align: center;
+    position: absolute;
+    bottom: 1rem;
+}
+
 @media only screen and (max-device-width: 768px) {
     #entry{
         flex-direction: column;
@@ -272,5 +281,10 @@ button:focus {
 
     .endButton{
         font-size: 2.5rem;
+    }
+
+    .endSuggestion{
+        font-size: 2rem;
+        margin: 0px 1rem;
     }
 }
