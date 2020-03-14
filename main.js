@@ -128,11 +128,11 @@ function NextQuestion(button){
 
 function displayPercentages(type, val1, val2, val3){
     if(type == "CFG"){
-        subResultText = "Jemi " + getPercentage(val1, 23) + "% t\xEB sigurt se keni COVID-19 dhe <br> " + getPercentage(val2, 26) + "% kaq besojm q\xEB keni ftohje <br> kurse kaq" + getPercentage(val3, 27) + " q\xEB keni grip."
+        subResultText = "Jemi " + getPercentage(val1, 23) + "% t\xEB sigurt se keni COVID-19 dhe <br> " + getPercentage(val2, 26) + "% q\xEB keni ftohje <br> kurse kaq" + getPercentage(val3, 27) + " q\xEB keni grip."
     }else if(type == "CF"){
-        subResultText = "Jemi " + getPercentage(val1, 23) + "% t\xEB sigurt se keni COVID-19 dhe <br> " + getPercentage(val2, 26) + "% kaq besojm q\xEB keni ftohje."
+        subResultText = "Jemi " + getPercentage(val1, 23) + "% t\xEB sigurt se keni COVID-19 dhe <br> " + getPercentage(val2, 26) + "% q\xEB keni ftohje."
     }else if(type == "CG"){
-        subResultText = "Jemi " + getPercentage(val1, 23) + "% t\xEB sigurt se keni COVID-19 dhe <br> " + getPercentage(val3, 27) + "% kaq besojm q\xEB keni grip."
+        subResultText = "Jemi " + getPercentage(val1, 23) + "% t\xEB sigurt se keni COVID-19 dhe <br> " + getPercentage(val3, 27) + "% q\xEB keni grip."
     }else if(type == "C"){
         subResultText = "Jemi " + getPercentage(val1, 23) + "% t\xEB sigurt se keni COVID-19."
     }else if(type == "F"){
@@ -149,8 +149,8 @@ function getPercentage(val, num){
     return Math.floor(((num - val) / num) * 100)
 }
 
-$(".buttonQ").hover(function(){
-    
+$("h1").on("on", function(){
+    console.log(1);
 })
 
 $('html').keypress(function(event){
@@ -165,9 +165,6 @@ function hideEntry(){
 	$('#mainImg').css('transform', 'translate(-730px, 0px)');
     $('#textEntry').css('transform', 'translate(920px, 0px)');
     setTimeout(fadeInSurvey, 2000);
-    $("#buttons").css("");
-    $("#main").css("");
-    $("#circleProgres").css("");
 }
 
 function fadeInSurvey(){
