@@ -187,5 +187,5 @@ function endingDel(){
     $("body").append(resultText)
     $("body").append("<h4 class='endPercentageText'>" + subResultText + "</h4>")
     $("body").append("<button class='endButton' onclick='location.reload()'>Përsërit testin</button>")
-    $("body").append("<h4 class='endSuggestion'> Ju rekomandojmë shumë që të izoloheni në dhomat e juaja dhe të keni sa më pak kontakt me njerëz të tjerë per sigurinë e tyres nqofse jeni diagnostifikuar me COVID-19 <br> Kontaktojeni ketë numër tani për më shumë informata për hapat e ardhshëm</h4>")
+    $("body").append("<h4 class='endSuggestion'> Ju rekomandojmë shumë që të izoloheni në dhomat e juaja dhe të keni sa më pak kontakt me njerëz të tjerë per sigurinë e tyres nqofse jeni diagnostifikuar me COVID-19 <br> Kontaktojeni ketë numër 038 200 808 00 tani për më shumë informata për hapat e ardhshëm</h4>")
 }
