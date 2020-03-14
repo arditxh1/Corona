@@ -186,5 +186,5 @@ function endingDel(){
     $("#circleProgres").remove();
     $("body").append(resultText)
     $("body").append("<h4 class='endPercentageText'>" + subResultText + "</h4>")
-    $("body").append("<button class='endPercentageText'>" + subResultText + "</button>")
+    $("body").append("<button class='endButton' onclick='location.reload()'>Përsërit testin</button>")
 }
