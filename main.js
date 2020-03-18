@@ -38,16 +38,16 @@ let dataset = {
 }
 
 let questions = {
-    1: "A keni temperatur\xEB t\xEB lart\xEB shpesh?",
-    2: "A ndjeheni t\xEB lodhur?",
-    3: "Sa shpesh kolliteni?",
+    1: "Do you have signs of fever?",
+    2: "Do you feel fatigue?",
+    3: "Do you cough?",
     4: "A teshtini n\xEB baza normale?",
-    5: "A keni dhembje trupore?",
-    6: "A keni shkuarje ose bllokim hunde?",
-    7: "A keni dhimbje t\xEB fytit?",
-    8: "A keni barkqitje?",
-    9: "A keni dhimbje koke?",
-    10: "A keni v\xEBshtir\xEBsi n\xEB frymarrje?"
+    5: "Do you feeel aches & pains?",
+    6: "Do you have a runny or stuffy nose?",
+    7: "Do you have a sore throat?",
+    8: "Do you have diarrhea?",
+    9: "Do you have headaches?",
+    10: "Do you experince shortness of breath?"
 }
 
 let userData = [];
@@ -105,22 +105,22 @@ function NextQuestion(button){
         console.log(diagnosis);
         console.log(FtofjeAccuracy);
         if(diagnosis == CovidAccuracy && diagnosis == FtofjeAccuracy && diagnosis == GripiAccuracy){
-            resultText = "<h1 class='endTitleText'>Keni simptona n\xEB mes COVID-19, ftohjes dhe gripit.</h1>"
+            resultText = "<h1 class='endTitleText'>You have symptoms between COVID-19, a cold and the flu.</h1>"
             displayPercentages("CFG", CovidAccuracy, FtofjeAccuracy, GripiAccuracy)
         }else if(diagnosis == CovidAccuracy && diagnosis == FtofjeAccuracy){
-            resultText = "<h1 class='endTitleText'>Keni simptona n\xEB mes COVID-19 dhe ftohjes</h1>"
+            resultText = "<h1 class='endTitleText'>You have symptoms between COVID-19 and a cold</h1>"
             displayPercentages("CF", CovidAccuracy, FtofjeAccuracy, GripiAccuracy)
         }else if(diagnosis == CovidAccuracy && diagnosis == GripiAccuracy){
-            resultText = "<h1 class='endTitleText'>Keni simptona n\xEB mes COVID-19 dhe gripit.</h1>"
+            resultText = "<h1 class='endTitleText'>You have symptoms between COVID-19 and the flu.</h1>"
             displayPercentages("CG", CovidAccuracy, FtofjeAccuracy, GripiAccuracy)
         }else if(diagnosis == CovidAccuracy){
-            resultText = "<h1 class='endTitleText'>Ka mund\xEBsi q\xEB keni COVID-19.</h1>"
+            resultText = "<h1 class='endTitleText'>There's a chance that u have COVID-19.</h1>"
             displayPercentages("C", CovidAccuracy, FtofjeAccuracy, GripiAccuracy)
         }else if(diagnosis == FtofjeAccuracy){
-            resultText = "<h1 class='endTitleText'>Ka mund\xEBsi q\xEB keni ftohje.</h1>"
+            resultText = "<h1 class='endTitleText'>There's a chance that u have a cold.</h1>"
             displayPercentages("F", CovidAccuracy, FtofjeAccuracy, GripiAccuracy)
         }else if(diagnosis == GripiAccuracy){
-            resultText = "<h1 class='endTitleText'>Ka mund\xEBsi q\xEB keni grip.</h1>"
+            resultText = "<h1 class='endTitleText'>There's a chance that u have the flu.</h1>"
             displayPercentages("G", CovidAccuracy, FtofjeAccuracy, GripiAccuracy)
         }
     }
@@ -128,17 +128,17 @@ function NextQuestion(button){
 
 function displayPercentages(type, val1, val2, val3){
     if(type == "CFG"){
-        subResultText = "Jemi " + getPercentage(val1, 23) + "% t\xEB sigurt se keni COVID-19 dhe <br> " + getPercentage(val2, 26) + "% q\xEB keni ftohje <br> kurse kaq" + getPercentage(val3, 27) + " q\xEB keni grip."
+        subResultText = "We are " + getPercentage(val1, 23) + "% that you have COVID-19 and <br> " + getPercentage(val2, 26) + "% that u have a cold <br> but also" + getPercentage(val3, 27) + " sure that you have the flu."
     }else if(type == "CF"){
-        subResultText = "Jemi " + getPercentage(val1, 23) + "% t\xEB sigurt se keni COVID-19 dhe <br> " + getPercentage(val2, 26) + "% q\xEB keni ftohje."
+        subResultText = "We are " + getPercentage(val1, 23) + "% that you have COVID-19 and <br> " + getPercentage(val2, 26) + "% sure that u have a cold"
     }else if(type == "CG"){
-        subResultText = "Jemi " + getPercentage(val1, 23) + "% t\xEB sigurt se keni COVID-19 dhe <br> " + getPercentage(val3, 27) + "% q\xEB keni grip."
+        subResultText = "We are " + getPercentage(val1, 23) + "% that you have COVID-19 and <br> " + getPercentage(val3, 27) + "% sure that u have the flu."
     }else if(type == "C"){
-        subResultText = "Jemi " + getPercentage(val1, 23) + "% t\xEB sigurt se keni COVID-19."
+        subResultText = "We are " + getPercentage(val1, 23) + "% that you have COVID-19."
     }else if(type == "F"){
-        subResultText = "Jemi " + getPercentage(val2, 26) + "% t\xEB sigurt se keni ftofje."
+        subResultText = "We are " + getPercentage(val2, 26) + "% that you have a cold."
     }else if(type == "G"){
-        subResultText = "Jemi " + getPercentage(val3, 27) + "% t\xEB sigurt se keni grip."
+        subResultText = "We are " + getPercentage(val3, 27) + "% that you have the flu."
     }
 }
 
@@ -186,6 +186,5 @@ function endingDel(){
     $("#circleProgres").remove();
     $("body").append(resultText)
     $("body").append("<h4 class='endPercentageText'>" + subResultText + "</h4>")
-    $("body").append("<button class='endButton' onclick='location.reload()'>Përsërit testin</button>")
-    $("body").append("<h4 class='endSuggestion'> Ju rekomandojmë shumë që të izoloheni në dhomat e juaja dhe të keni sa më pak kontakt me njerëz të tjerë per sigurinë e tyres nqofse jeni diagnostifikuar me COVID-19 <br> Kontaktojeni ketë numër 038 200 808 00 tani për më shumë informata për hapat e ardhshëm</h4>")
+    $("body").append("<button class='endButton' onclick='location.reload()'>Retake the test</button>")
 }
